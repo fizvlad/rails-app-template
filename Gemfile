@@ -37,6 +37,10 @@ group :development, :test do
   gem 'rubocop-performance', require: false
   # Rubocop RSpec extension
   gem 'rubocop-rspec', require: false
+  # Specification and testing
+  gem 'rspec', require: false
+  # RSpec for RoR
+  gem 'rspec-rails', require: false
 end
 
 group :development do
