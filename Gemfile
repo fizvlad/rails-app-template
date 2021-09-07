@@ -41,6 +41,8 @@ group :development, :test do
   gem 'rspec', require: false
   # RSpec for RoR
   gem 'rspec-rails', require: false
+  # Test coverage check
+  gem 'simplecov'
 end
 
 group :development do
