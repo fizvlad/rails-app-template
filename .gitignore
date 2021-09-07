@@ -44,4 +44,3 @@ yarn-debug.log*
 
 # Ignore coverage temporary data
 /coverage/*
-
