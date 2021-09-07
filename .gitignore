@@ -38,3 +38,9 @@
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
+
+# Ignore Rspec temporary data
+/spec/examples.txt
+
+# Ignore coverage temporary data
+/coverage/*

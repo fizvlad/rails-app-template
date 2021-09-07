@@ -10,6 +10,10 @@ if ENV['RAILS_ENV'] != 'production'
   require 'rubocop/rake_task'
   RuboCop::RakeTask.new
 
+  # RSpec
+  require 'rspec/core/rake_task'
+  RSpec::Core::RakeTask.new(:rspec)
+
   # Default
-  task default: %i[rubocop] # TODO: eslint erblint spec
+  task default: %i[rubocop rspec] # TODO: eslint erblint
 end
