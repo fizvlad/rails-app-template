@@ -31,9 +31,5 @@ jobs:
       run: bundle exec rails webpacker:compile
       env:
         RAILS_ENV: test
-    - name: Run rubocop
-      run: bundle exec rake rubocop
-    - name: Run rspec
-      run: bundle exec rake spec
-      env:
-        RAILS_ENV: test
+    - name: Run default rake task
+      run: bundle exec rake
