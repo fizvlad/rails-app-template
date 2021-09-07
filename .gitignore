@@ -42,3 +42,6 @@ yarn-debug.log*
 # Ignore Rspec temporary data
 /spec/examples.txt
 
+# Ignore coverage temporary data
+/coverage/*
+
