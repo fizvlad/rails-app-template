@@ -5,4 +5,11 @@ require_relative "config/application"
 
 Rails.application.load_tasks
 
-task default: %i[] # TODO: eslint erblint rubocop spec
+if ENV['RAILS_ENV'] != 'production'
+  # Rubocop
+  require 'rubocop/rake_task'
+  RuboCop::RakeTask.new
+
+  # Default
+  task default: %i[rubocop] # TODO: eslint erblint spec
+end
