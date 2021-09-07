@@ -1,0 +1,39 @@
+name: main
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  test:
+
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        ruby-version: ['3.0.0']
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: ${{ matrix.ruby-version }}
+        bundler-cache: true
+    - name: Set up Node
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'
+    - name: Install yarn dependencies
+      run: yarn install
+    - name: Run webpack
+      run: bundle exec rails webpacker:compile
+      env:
+        RAILS_ENV: test
+    - name: Run rubocop
+      run: bundle exec rake rubocop
+    - name: Run rspec
+      run: bundle exec rake spec
+      env:
+        RAILS_ENV: test
