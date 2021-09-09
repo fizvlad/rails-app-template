@@ -1,0 +1,5 @@
+en:
+  pages:
+    root:
+      title: "Rails Template App"
+      description: "This is a root page for the Rails Template App"

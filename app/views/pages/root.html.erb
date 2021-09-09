@@ -1,3 +1,21 @@
 <h1>Root page</h1>
 
 <p>This is a root page</p>
+
+
+<% content_for :packs do %>
+  <%#= stylesheet_pack_tag 'pages/root', 'data-turbolinks-track': 'reload' %>
+<% end %>
+
+<% content_for :meta do %>
+  <%= title_tag t('.title') %>
+  <meta name="description" content="<%= t('.description') %>">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="">
+
+  <meta property="og:title" content="<%= t('.title') %>">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+  <meta property="og:type" content="website">
+  <meta property="og:description" content="<%= t('.description') %>">
+<% end %>
