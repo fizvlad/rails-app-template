@@ -1,16 +1,28 @@
 <!DOCTYPE html>
-<html>
+<html lang="<%= I18n.locale.to_s %>">
   <head>
-    <title>RailsAppTemplate</title>
+    <% if content_for? :meta %>
+      <%= yield :meta %>
+    <% else %>
+      <%= title_tag t('.title') %>
+    <% end %>
+
+    <meta charset="utf8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'layouts/application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'layouts/application', 'data-turbolinks-track': 'reload' %>
+
+    <%= yield :packs %>
   </head>
 
   <body>
-    <%= yield %>
+    <div class="application">
+      <main class="application__content container">
+        <%= yield %>
+      </div>
+    </div>
   </body>
 </html>
