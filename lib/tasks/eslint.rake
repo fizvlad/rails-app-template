@@ -5,7 +5,8 @@
 desc 'Run ESLint check'
 task :eslint do
   puts 'Running ESLint...'
-  abort('ESLint failed!') unless system('yarn run eslint app/javascript app/assets/javascript --no-error-on-unmatched-pattern')
+  command = 'yarn run eslint app/javascript app/assets/javascript --no-error-on-unmatched-pattern'
+  abort('ESLint failed!') unless system(command)
   puts
 end
 
