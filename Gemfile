@@ -43,6 +43,8 @@ group :development, :test do
   gem 'rspec-rails', require: false
   # Test coverage check
   gem 'simplecov'
+  # Testing ERB files
+  gem 'erb_lint', require: false
 end
 
 group :development do
