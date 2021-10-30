@@ -38,9 +38,15 @@ Coverage check is disabled
 
 It is... configured 🤷‍♂️
 
-## BEM
+## BEM and styles structure
 
-Created with BEM in mind. Place your assets into `app/assets/` and create packs by configuring files in `app/javascript/packs`. Pass packs requirements using `content_for :packs` in your views
+Created with BEM in mind. Place your assets into `app/assets/` and create packs by configuring files in `app/javascript/packs/`. Pass packs requirements using `content_for :packs` in your views.
+
+Fonts are stored in `app/assets/fonts/` and defined in shared `app/stylesheets/fonts`
+
+Global SASS variables are stored in `app/stylesheets/variables`
+
+Images are stored in `app/assets/images/` and can be easily imported into stylesheets. See `svg.scss`
 
 ## CSS normalization
 

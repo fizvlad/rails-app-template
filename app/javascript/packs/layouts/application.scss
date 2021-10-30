@@ -1,5 +1,11 @@
+// Externals
 @import 'normalize.css';
 
-@import 'stylesheets/library.blocks/container';
+// Shared
+@import 'stylesheets/variables';
+@import 'stylesheets/fonts';
 
+// BEM
+@import 'stylesheets/library.blocks/container';
+@import 'stylesheets/library.blocks/svg';
 @import 'stylesheets/common.blocks/application';
